@@ -2,6 +2,7 @@
 html {
   box-sizing: border-box;
 }
+
 *,
 ::after,
 ::before {
@@ -28,3 +29,42 @@ výchozí (=mobil) - 1 obrázek na řádku (tj. 12 obrázků pod sebou)
 širší než 800px  - 4 obrázky vedle sebe
 širší než 1000px - 6 obrázků vedle sebe
 */
+
+.galerie {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.foto img {
+  width: 100%;
+}
+
+@media (min-width:500px) {
+
+  .galerie {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .foto {
+    flex-basis: calc(100%/2);
+  }
+}
+
+@media (min-width:650px) {
+  .foto {
+    flex-basis: calc(100%/3)
+  }
+}
+
+@media (min-width:800px) {
+  .foto {
+    flex-basis: calc(100%/4)
+  }
+}
+
+@media (min-width:1000px) {
+  .foto {
+    flex-basis: calc(100%/6);
+  }
+}
